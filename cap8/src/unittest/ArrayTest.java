@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -28,6 +29,14 @@ public class ArrayTest {
 	public void whenArrayIsNotEmptyThenAssertFalse() {
 		s.add(1);
 		assertFalse(s.isEmpty());
+	}
+	
+	@Test
+	public void whenArrayHaveThreeElThenSizeAssertEq() {
+	    s.add(1);
+	    s.add(2);
+	    s.add(3);
+	    assertEquals(3, s.size());
 	}
 	
 //  public static void main(String[] args) {
