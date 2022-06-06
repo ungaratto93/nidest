@@ -2,20 +2,34 @@ package unittest;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
 public class ArrayTest {
 
+	List<Integer> s;
+	
+	@Before
+	public void setUp() {
+		s = new ArrayList<Integer>();
+	}
+	
 	@Test
 	public void whenArrayIsEmptyThenAssertTrue() {
-		List<Integer> s = new ArrayList<Integer>();
 		assertTrue(s.isEmpty());
 	}
-		
+	
+	@Test
+	public void whenArrayIsNotEmptyThenAssertFalse() {
+		s.add(1);
+		assertFalse(s.isEmpty());
+	}
+	
 //  public static void main(String[] args) {
 //
 //    // teste 1
