@@ -1,17 +1,26 @@
 package unittest;
 
+import static org.junit.Assert.assertTrue;
+
+import java.util.EmptyStackException;
+import java.util.Stack;
+
+import org.junit.Test;
+
 public class StackTest {
+
 	@Test
 	public void testEmptyStackException() {
 	  boolean sucesso = false;
 	  try {
-	    Stack s<Integer> = new Stack<Integer>();
+	    Stack <Integer>s = new Stack<Integer>();
 	    s.push(10);
-	    int r = stack.pop();
-	    r = stack.pop();
+	    s.pop();
+	    s.pop();
 	  } catch (EmptyStackException e) {
 	    sucesso = true;
 	  }
 	  assertTrue(sucesso);
 	}
+	
 }
