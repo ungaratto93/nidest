@@ -39,6 +39,31 @@ public class ArrayTest {
 	    assertEquals(3, s.size());
 	}
 	
+	@Test
+	public void whenArrayElIsRemovedThenSizeDecreaseAndElAssertEq() {
+	    s.add(1);
+	    s.add(2);
+	    s.add(3);
+	    int el = s.remove(2); // number 3
+	    assertEquals(3 , el);
+	    assertEquals(2, s.size());
+	}
+	
+	@Test
+	public void whenArrayAllElisRemovedThenSizeAssertEqToZeroAndIsEmptyAssertTrue() {
+	    s.add(1);
+	    s.remove(0);
+	    assertEquals(0, s.size());
+	    assertTrue(s.isEmpty());
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void whenArrayWrongIndexThenAssertIndexOutOfBoundsException() {
+		s.add(1); // index 0
+		s.add(2); // index 1
+		s.remove(2);
+	}
+	
 //  public static void main(String[] args) {
 //
 //    // teste 1
